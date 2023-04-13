@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "90bbee1d-5172-4c01-a487-c41bcca402ef",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ObtenerProductos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/apiproduct/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"apiproduct",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActualizarProducto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"platos\",\r\n    \"descripcion\": \"des\",\r\n    \"precio\": \"45000.00\",\r\n    \"cantidad\": 109\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/apiproduct/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"apiproduct",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdicionarProducto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"nombre\": \"televisores\",\r\n    \"descripcion\": \"des tv\",\r\n    \"precio\": \"1245000.00\",\r\n    \"cantidad\": 8\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/apiproduct/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"apiproduct",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

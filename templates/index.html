@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+
+     <section id="speakers" class="mt-4">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center text-uppercase">
+            <h2>PRODUCTOS</h2>
+          </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <a class="btn btn-primary" href="adicionar/"><span title="Agregar Producto" class="fa fa-plus"></span> Adicionar</a>
+            <form id="formExportar" name="formExportar" method="POST" action="{% url 'exportarProducto' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.errors}}
+                 <button id="btnExportar" name="btnExportar" type="submit" class="btn btn-info  btn-lg pull-right" value="Exportar" style="position: absolute; right: 0;"><i class="fa fa-file-excel pull-right"> Reporte</i></button>
+            </form>
+        </div>
+
+        <div class="row">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+{#                  <th scope="col">#</th>#}
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Descipcion</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Precio Unit</th>
+                  <th scope="col">Editar</th>
+                  <th scope="col">Borrar</th>
+                </tr>
+              </thead>
+              <tbody>
+               {% for product  in productos %}
+                   <tr>
+{#                  <th scope="row">{{ product.id }}</th>#}
+                  <td>{{ product.nombre }}</td>
+                  <td>{{ product.descripcion }}</td>
+                  <td>{{ product.cantidad }}</td>
+                  <td>{{ product.precio }}</td>
+                  <td> <a class="btn btn-primary" href="details/{{ product.id }}"><span title="Editar Producto" class="fa fa-pen"></span></a></td>
+                  <td> <a class="btn btn-danger" href="borrado/{{ product.id }}"><span title="Editar Producto" class="fa fa-eraser"></span></a></td>
+                </tr>
+               {% endfor %}
+              </tbody>
+            </table>
+
+        </div>
+      </div>
+    </section>
+
+
+{% endblock %}
